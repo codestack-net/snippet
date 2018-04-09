@@ -1,0 +1,25 @@
+<html>
+<head>
+	<link rel="stylesheet" href="styles/container.css"></link>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/src/prettify.js"></script>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/lang-vb.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/google/code-prettify/master/src/prettify.css"></link>
+	<script src="https://cdn.rawgit.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.contentWindow.min.js"></script>
+	<script src="https://shared.codestack.net/scripts/http-helper.js"></script>
+	<script>
+	function loadSnippet() {
+	 
+	var src = getUrlParameter(window.location.href, "src");
+	var code = loadTextDoc(src);
+	var snippet = document.getElementById("snippet");
+	var lang = getUrlParameter(window.location.href, "lang");
+	snippet.innerHTML = "<xmp>" +  code + "</xmp>";
+			 snippet.className="prettyprint lang-" + lang;
+			 prettyPrint();
+	}
+	</script>
+ </head>
+ <body onload="loadSnippet()">
+	<pre id="snippet"/>
+ </body>
+</html>
